@@ -51,15 +51,15 @@
 - [ ] Resolution study: run the Taylor-Green DNS at 48^3, 64^3 and increasing Reynolds; track whether the BKM integral shows any sign of divergence (with the explicit caveat that numerics cannot prove blow-up)
 - [ ] Add 2/3-rule dealiasing to the Taylor-Green solver and confirm energy/enstrophy diagnostics are stable under it
 - [ ] Set up the Hou-Luo axisymmetric near-singular scenario at coarse resolution (the most-studied candidate near-blow-up flow)
-- [ ] Quantitative criticality dossier: classify the one-component, vorticity-direction (Constantin-Fefferman), and anisotropic criteria onto the sub/critical/super coordinate
+- [ ] Quantitative criticality dossier: classify the one-component, vorticity-direction (Constantin-Fefferman), and anisotropic criteria onto the sub/critical/super coordinate (Constantin-Fefferman done in docs/03_research/reading_notes/constantin_fefferman_1993.md and the criticality-placement table; one-component and anisotropic criteria remain)
 - [ ] Energy spectrum from an actual Taylor-Green run rather than the synthetic fallback; compare the -5/3 inertial range expectation at higher Reynolds
 - [ ] 2D control experiment: run a 2D Navier-Stokes DNS showing enstrophy non-increasing and no stretching, side by side with the 3D run, to make the must-stay-smooth control concrete in code
 
 ## Open: analytic (the open problem)
 
-- [ ] Survey: map every known regularity criterion onto the sub/critical/super coordinate and identify which are genuinely scale-invariant geometric conditions
-- [ ] Survey: the convex-integration non-uniqueness literature (Buckmaster-Vicol and after) and exactly what it does and does not say about the smooth flow
-- [ ] Survey: the Tao averaged-NS barrier and what structural feature any regularity proof must use to exclude the averaged caricature
+- [ ] Survey: map every known regularity criterion onto the sub/critical/super coordinate and identify which are genuinely scale-invariant geometric conditions (landmark criteria mapped in docs/03_research/reading_notes/README.md criticality-placement table; remaining: one-component, anisotropic, and Ladyzhenskaya-Prodi-Serrin variants)
+- [x] Survey: the convex-integration non-uniqueness literature (Buckmaster-Vicol and after) and exactly what it does and does not say about the smooth flow (dossiers: buckmaster_vicol_2019, isett_2018, albritton_brue_colombo_2022, plus the spine narrative in reading_notes/README.md)
+- [x] Survey: the Tao averaged-NS barrier and what structural feature any regularity proof must use to exclude the averaged caricature (dossier: docs/03_research/reading_notes/tao_2016_averaged.md)
 - [ ] Identify the smallest open conditional improvement worth targeting (e.g., a logarithmic improvement of a Prodi-Serrin endpoint, or a vorticity-direction condition weakened toward criticality)
 
 ## Open: Lean / formalization

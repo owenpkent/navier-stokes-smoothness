@@ -24,6 +24,10 @@ Plus the **averaged-NS barrier** (Tao 2016): energy-plus-scaling is not enough; 
 
 Environment note: the local matplotlib is built against NumPy 1.x and crashes on import under NumPy 2.x. The experiments catch this and skip plotting; the numerics are unaffected. To restore plots, reinstall matplotlib for NumPy 2.x.
 
+## Reference corpus
+
+`references/README.md` (annotated bibliography, ~50 entries by architecture) and `references/reading_guide.md` (curated entry path) index the library. `docs/03_research/reading_notes/` holds 22 deep dossiers, one per load-bearing source, each following a fixed template: precise statement, method at the lemma level, criticality placement on the sub/critical/super scale, audit against the three controls, what-it-gives/what-it-doesn't, lineage, references. The index `reading_notes/README.md` groups them by architecture and carries a criticality-placement table. Extend in this template; PDFs stay gitignored.
+
 ## Owner
 
 Owen, wheelchair user with muscular dystrophy. Typing is hard. Be proactive, offer A/B/C choices, PowerShell on Windows, no em dashes anywhere.
