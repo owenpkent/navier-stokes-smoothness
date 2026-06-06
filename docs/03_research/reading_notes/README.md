@@ -64,6 +64,7 @@ The five architectures are those of the project spine (see [`../../../CLAUDE.md`
 |---|---|---|---|
 | Lemarie-Rieusset, *The Navier-Stokes Problem in the 21st Century* | 2016; 2024 | proof-complete encyclopedic backbone for Architectures 1-4 | [notes](lemarie_rieusset_book.md) |
 | Annotated map of the eight standard graduate references | various | one-lookup routing across Constantin-Foias, Temam, Doering-Gibbon, Majda-Bertozzi, Bahouri-Chemin-Danchin, Robinson-Rodrigo-Sadowski, Galdi, Sohr | [notes](textbooks_map.md) |
+| Further-books map: more NS/Euler monographs, the analysis substrate, the experiment-adjacent threads | various | one-lookup routing across Tsai, Bedrossian-Vicol, Chemin, Marchioro-Pulvirenti, Cannone, Seregin, Boyer-Fabrie, Lions, Foias-Manley-Rosa-Temam, plus the harmonic-analysis / function-space / numerics substrate | [notes](further_books_map.md) |
 
 ## Criticality placement
 
@@ -121,6 +122,6 @@ The single recurring reading: every unconditional all-time bound the theory prod
 5. **CKN 1982** ([notes](caffarelli_kohn_nirenberg_1982.md)) with **Lin-Vasseur** ([notes](lin_vasseur_partial_regularity.md)): the best unconditional partial regularity and its modern proofs.
 6. **Tao 2016** ([notes](tao_2016_averaged.md)): the barrier. Read this once the energy method's reach is clear; it explains why energy plus scaling cannot suffice.
 7. Specialist branches, as needed: **Constantin-Fefferman 1993** ([notes](constantin_fefferman_1993.md)) and **Tao 2019** ([notes](tao_2019_quantitative.md)) for the vorticity-geometry and quantitative-ESS directions; **Necas-Ruzicka-Sverak 1996** ([notes](necas_ruzicka_sverak_1996.md)), **Elgindi 2021** ([notes](elgindi_2021.md)), and **Luo-Hou / Chen-Hou** ([notes](luo_hou_2014.md)) for self-similar exclusion and the inviscid blow-up that viscosity must beat; **Isett 2018** ([notes](isett_2018.md)), **Buckmaster-Vicol 2019** ([notes](buckmaster_vicol_2019.md)), and **Albritton-Brue-Colombo 2022** ([notes](albritton_brue_colombo_2022.md)) for the convex-integration / non-uniqueness boundary.
-8. Textbook backbone, for proofs and routing: **Lemarie-Rieusset** ([notes](lemarie_rieusset_book.md)) and the **annotated map of standard references** ([notes](textbooks_map.md)).
+8. Textbook backbone, for proofs and routing: **Lemarie-Rieusset** ([notes](lemarie_rieusset_book.md)), the **annotated map of standard references** ([notes](textbooks_map.md)), and the **further-books map** ([notes](further_books_map.md)) for additional NS/Euler monographs (Tsai, Bedrossian-Vicol, Chemin, ...), the analysis substrate, and the experiment-adjacent threads.
 
 For a curated entry path through the broader bibliography, see [`../../../references/reading_guide.md`](../../../references/reading_guide.md).
