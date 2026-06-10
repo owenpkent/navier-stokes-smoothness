@@ -26,6 +26,9 @@
 - [x] Burgers shock: inviscid Burgers forms a shock (gradient blow-up) in finite time, viscous Burgers stays smooth (runs)
 - [x] Taylor-Green DNS: pseudo-spectral 32^3, low Reynolds, track energy/enstrophy/max vorticity + BKM integral, observe BKM integral stays finite (runs)
 - [x] Energy spectrum: from a TG-style field, plot E(k) and the dissipation rate, show the cascade and where resolution bites (runs)
+- [x] Resolution study: BKM integral under grid refinement (16/24/32^3, two viscosities) + critical norms L^3, H^1/2 tracked; verdict CONVERGED at laptop parameters, instrument calibrated (runs; `experiments/resolution_study/`)
+- [x] Vortex stretching anatomy: enstrophy budget dZ/dt = P - D, strain-eigenvector alignment, depletion factor, Constantin-Fefferman direction coherence, with the 2D control alongside (runs; `experiments/vortex_stretching/`)
+- [x] Dyadic shell criticality scan: blow-up/regularity boundary at alpha_c = 1/3 confirmed dynamically; criticality bookkeeper validated as a dynamical predictor (runs; `experiments/dyadic_shell/`)
 
 ### Lean 4 / Mathlib skeleton
 
@@ -48,12 +51,12 @@
 
 ## Open: experimental
 
-- [ ] Resolution study: run the Taylor-Green DNS at 48^3, 64^3 and increasing Reynolds; track whether the BKM integral shows any sign of divergence (with the explicit caveat that numerics cannot prove blow-up)
+- [ ] Resolution study at higher resolution: push the existing `resolution_study/` to 48^3, 64^3 and lower viscosity; confirm BKM convergence persists (the 16/24/32^3 sweep is done and converged)
 - [ ] Add 2/3-rule dealiasing to the Taylor-Green solver and confirm energy/enstrophy diagnostics are stable under it
 - [ ] Set up the Hou-Luo axisymmetric near-singular scenario at coarse resolution (the most-studied candidate near-blow-up flow)
 - [ ] Quantitative criticality dossier: classify the one-component, vorticity-direction (Constantin-Fefferman), and anisotropic criteria onto the sub/critical/super coordinate (Constantin-Fefferman done in docs/03_research/reading_notes/constantin_fefferman_1993.md and the criticality-placement table; one-component and anisotropic criteria remain)
 - [ ] Energy spectrum from an actual Taylor-Green run rather than the synthetic fallback; compare the -5/3 inertial range expectation at higher Reynolds
-- [ ] 2D control experiment: run a 2D Navier-Stokes DNS showing enstrophy non-increasing and no stretching, side by side with the 3D run, to make the must-stay-smooth control concrete in code
+- [x] 2D control experiment: 2D Navier-Stokes enstrophy non-increasing and production structurally zero, run side by side with the 3D vortex-stretching diagnostics (in `experiments/vortex_stretching/`)
 
 ## Open: analytic (the open problem)
 

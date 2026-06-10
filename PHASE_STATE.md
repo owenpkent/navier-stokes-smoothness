@@ -50,14 +50,14 @@
 ## Recommended next session actions
 
 1. **Survey the critical/conditional regularity landscape** (SURVEYOR): produce a dossier mapping every known regularity criterion (PSL, BKM, ESS, one-component Neustupa-Penel, vorticity-direction Constantin-Fefferman, Beirao da Veiga, Cheskidov-Shvydkoy) onto the sub/critical/super coordinate, and identify which have been weakened to genuinely scale-invariant geometric conditions. The Constantin-Fefferman vorticity-coherence result is the lead.
-2. **Resolution study on near-singular data** (BUILDER + ADVERSARY): run the Taylor-Green DNS at increasing resolution and Reynolds number, track the BKM integral, and verify under the viscosity control that any apparent growth converges (does not diverge) as the grid refines. Optionally set up the Hou-Luo axisymmetric scenario at coarse resolution.
+2. **Near-singular data** (BUILDER + ADVERSARY): the Taylor-Green resolution study is DONE (`experiments/resolution_study/`, BKM converges at laptop parameters; LEARNINGS #11). Next: set up the Hou-Luo axisymmetric scenario at coarse resolution and apply the same refinement diagnostic.
 3. **Lean: state the energy inequality cleanly** (VERIFIER): attempt a Mathlib-faithful statement of $\tfrac12\|u(t)\|_2^2 + \nu\int_0^t\|\nabla u\|_2^2 \le \tfrac12\|u_0\|_2^2$, identifying the exact Mathlib gap (vector-valued Sobolev spaces). Document the gap as a VERIFIER target.
 
 ## Falsifiability triggers
 
 - A proposed a priori bound turns out supercritical under the criticality bookkeeper: this is the default outcome and the constant discipline. NOT a one-time trigger; it is the filter.
 - A candidate regularity argument applies verbatim to 2D and would predict 2D blow-up: TRIGGERED means the method ignores 3D structure. Currently NOT TESTED against any candidate (no candidate yet).
-- A candidate blow-up mechanism is killed by viscosity in a resolution study: the diagnostic that looked divergent converges. NOT YET TESTED at research resolution.
+- A candidate blow-up mechanism is killed by viscosity in a resolution study: the diagnostic that looked divergent converges. INSTRUMENT CALIBRATED (`experiments/resolution_study/`: BKM converges in the known-smooth regime; the trigger now has a defined readout). Not yet tested against a near-singular scenario.
 - A direction shows no measurable progress over N sessions: NOT YET (one session).
 
 ## Pending agent outputs
@@ -75,6 +75,7 @@ None (scaffold session).
 | Date | Session focus | Commits | Key outputs |
 |---|---|---|---|
 | scaffold | Stand up the repo: structure, docs, controls, four experiments, Lean skeleton, agents | scaffold | The supercriticality spine; criticality bookkeeper + 2D + viscosity controls; Taylor-Green DNS; Burgers shock comparison; five research directions; LEARNINGS seeded with real findings. |
+| 2026-06-09 | Three new local experiments (e, f, g) | pending | `resolution_study/` (BKM converges under refinement, instrument calibrated, LEARNINGS #11); `vortex_stretching/` (budget verified, depletion ~0.53, CF coherence measured, LEARNINGS #10); `dyadic_shell/` (criticality boundary at alpha_c = 1/3 confirmed dynamically, LEARNINGS #9). PLAN status table updated. |
 
 ## How to update this file
 

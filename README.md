@@ -29,7 +29,10 @@ navier-stokes-smoothness/
 │   ├── taylor_green/            # Pseudo-spectral DNS of the Taylor-Green vortex (RUNNABLE)
 │   ├── burgers_shock/           # Inviscid vs viscous Burgers blow-up (RUNNABLE)
 │   ├── energy_spectrum/         # Energy spectrum and dissipation from the TG run
-│   └── scaling_criticality/     # Sub/critical/super classification of norms (RUNNABLE)
+│   ├── scaling_criticality/     # Sub/critical/super classification of norms (RUNNABLE)
+│   ├── resolution_study/        # BKM integral under grid refinement + critical norms (RUNNABLE)
+│   ├── vortex_stretching/       # Enstrophy budget, strain alignment, depletion, CF coherence (RUNNABLE)
+│   └── dyadic_shell/            # Criticality boundary as dynamics in a blow-up-capable model (RUNNABLE)
 ├── references/                  # Reference library index (gitignored PDFs) + tracked index
 ├── lean/                        # Lean 4 / Mathlib formal verification (skeleton)
 │   ├── lakefile.lean
@@ -107,6 +110,9 @@ Synthesis of structural insights lives in [`experiments/LEARNINGS.md`](experimen
 | Experiments: Burgers shock vs viscous | Runnable (inviscid gradient blow-up vs smooth viscous solution) |
 | Experiments: scaling/criticality table | Runnable (classifies norms sub/critical/super) |
 | Experiments: energy spectrum | Runnable (reads TG output; falls back to a synthetic field) |
+| Experiments: resolution study | Runnable (BKM integral converges under 16/24/32^3 refinement; critical norms bounded) |
+| Experiments: vortex stretching anatomy | Runnable (enstrophy budget verified; depletion ~0.53; CF direction coherence measured) |
+| Experiments: dyadic shell criticality scan | Runnable (blow-up/regularity boundary confirmed at alpha_c = 1/3) |
 | Lean 4 / Mathlib skeleton | Skeleton with documented `sorry`s (need not build) |
 | Conjecture-forge protocol | Documented session pattern ([`OPERATIONS.md`](OPERATIONS.md) §10): ten first-principles lenses, four vetting gates |
 | Intuitive / undergraduate docs | In progress |
@@ -131,4 +137,13 @@ python -m experiments.burgers_shock.burgers_blowup
 
 # Run a coarse Taylor-Green DNS (a minute or two at 32^3)
 python -m experiments.taylor_green.taylor_green_dns
+
+# Resolution study: does the BKM integral converge under grid refinement? (a few minutes)
+python -m experiments.resolution_study.bkm_refinement
+
+# Vortex stretching anatomy: budget, alignment, depletion, CF coherence (about a minute)
+python -m experiments.vortex_stretching.alignment_depletion
+
+# Dyadic shell criticality scan: the bookkeeper made dynamical (seconds)
+python -m experiments.dyadic_shell.criticality_scan
 ```

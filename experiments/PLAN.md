@@ -30,6 +30,7 @@ Leray-Hopf weak solutions exist globally (Leray 1934, Hopf 1951); uniqueness/reg
 Beale-Kato-Majda ($\int_0^T\|\omega\|_\infty\,dt < \infty$), Prodi-Serrin-Ladyzhenskaya ($2/p+3/q\le1$), Escauriaza-Seregin-Sverak ($L^\infty_t L^3_x$ endpoint).
 
 - The BKM integral is tracked in the Taylor-Green DNS.
+- **Vortex stretching anatomy** (`vortex_stretching/`): RUNS. Measures the enstrophy budget $dZ/dt = P - D$ (verified to $<1\%$ in the resolved window), strain-eigenvector alignment, the stretching depletion factor ($\approx 0.53$ of pointwise-maximal), and the Constantin-Fefferman direction coherence $|\nabla\xi|$ in the intense region. The 2D control runs alongside ($P$ structurally zero, enstrophy non-increasing). This is the experimental face of the CF lead.
 - Mapping every criterion onto the criticality coordinate is the next survey target (see TODO and the research directions). The vorticity-direction (Constantin-Fefferman) geometric criterion is the lead.
 
 ### Architecture 3: critical spaces and scaling
@@ -44,7 +45,9 @@ The scaling symmetry; small-data global existence in $\dot H^{1/2}$ (Fujita-Kato
 Leray's self-similar ansatz, ruled out in $L^3$ (Necas-Ruzicka-Sverak 1996; Tsai 1998). Tao (2016): finite-time blow-up for an averaged Navier-Stokes (a barrier). Euler blow-up: Elgindi (2021); Hou-Luo and Chen-Hou numerics.
 
 - **Burgers shock** (`burgers_shock/`): RUNS. The viscosity control: inviscid gradient blow-up vs viscous smoothness.
-- Resolution studies on near-singular data (higher Reynolds Taylor-Green, the Hou-Luo scenario) are on the TODO; the diagnostic is whether the BKM integral diverges under grid refinement.
+- **Resolution study** (`resolution_study/`): RUNS. The BKM integral under grid refinement ($16^3 \to 24^3 \to 32^3$, two viscosities), plus the critical norms $\|u\|_{L^3}$, $\|u\|_{\dot H^{1/2}}$ along each run. Verdict at laptop parameters: CONVERGED (the smooth-regime calibration). The instrument for any future near-singular scenario: a candidate must show BKM growth that survives refinement.
+- **Dyadic shell criticality scan** (`dyadic_shell/`): RUNS. The Katz-Pavlovic-type cascade with dissipation exponent $\alpha$ as an explicit criticality dial. Inviscid: finite-time blow-up (arrival ratio $0.638$ vs predicted $\lambda^{-2/3} = 0.630$). Viscous: the verdict flips from BLOWS UP to REGULAR across the flux-balance line $\alpha_c = 1/3$ (empirically between $0.333$ and $0.36$). Validates the criticality bookkeeper as a dynamical predictor and reproduces the Tao-barrier lesson (finding #7) in miniature.
+- The Hou-Luo axisymmetric scenario at coarse resolution remains on the TODO.
 
 ### Architecture 5: non-uniqueness via convex integration
 
@@ -61,9 +64,16 @@ Buckmaster-Vicol (2019): non-uniqueness of weak solutions below the Leray-Hopf c
 | (b) | 4 / control | Burgers inviscid vs viscous shock | RUNS |
 | (a) | 1 / 2 | Taylor-Green DNS + BKM integral | RUNS (32^3) |
 | (c) | 1 / 3 | energy spectrum + dissipation | RUNS |
+| (e) | 4 / control | resolution study: BKM under grid refinement + critical norms | RUNS (16/24/32^3) |
+| (f) | 2 | vortex stretching anatomy: budget, alignment, depletion, CF coherence | RUNS (32^3) |
+| (g) | 3 / 4 | dyadic shell criticality scan (the bookkeeper, dynamical) | RUNS (40 shells) |
 | next | 2 | criticality dossier for all conditional criteria | TODO (survey) |
-| next | 4 | resolution study on near-singular data | TODO (compute) |
+| next | 4 | Hou-Luo axisymmetric scenario at coarse resolution | TODO (compute) |
 | next | 5 | convex-integration non-uniqueness survey | TODO (survey) |
+
+## Conjecture-forge probes (unvetted)
+
+Three falsification probes from the conjecture-forge session live alongside the vetted experiments: `renormalized_profile/` (budget identities, CLEAN), `pressure_hessian_axial/` (inconclusive at $64^3$), `local_induction_depletion/` (null placeholder, needs $N \gtrsim 256$). The underlying conjectures are NOT cleared by the controls; the scripts are reproducible scaffolds, not verdicts.
 
 ## Cross-references
 
