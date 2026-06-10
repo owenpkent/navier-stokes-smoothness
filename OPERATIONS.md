@@ -133,7 +133,49 @@ See [`PHASE_STATE.md`](PHASE_STATE.md) for the authoritative current state. As o
 
 This is iterative. The compounding effect across many sessions is what produces the program output.
 
-## 10. Cross-references
+## 10. The conjecture-forge protocol (a fan-out session pattern)
+
+A reusable session pattern for generating new candidate attacks when a direction stalls and the next move is "think of something genuinely new." It is a structured fan-out, not a one-shot prompt. It exists because the missing object (a coercive, scaling-critical a priori bound) is unlikely to come from incremental work on a single known criterion; the bet is that breadth of first-principles angles, each immediately stress-tested, surfaces a live lead faster than depth on one.
+
+### 10.1 Shape
+
+1. **Forge** (BUILDER per lens). Deploy one BUILDER for each first-principles *lens* below. Each returns a small number of precise, falsifiable conjectures (not restatements of known theorems). Every conjecture carries: a formal statement with quantifiers, a from-the-physics heuristic, the 3D mechanism it engages, the scaling arithmetic, the role of viscosity, the cheapest falsification test (ideally runnable in `experiments/`), and the author's own best guess at how it dies.
+2. **Attack** (ADVERSARY per conjecture). Each conjecture is run against four gates (see 10.3) and assigned `alive` / `wounded` / `dead`.
+3. **Precedent** (SURVEYOR per survivor). Every non-dead conjecture gets a literature-precedent check (`known` / `partially_known` / `open_new`) with the closest prior work named, so the genuinely new part is isolated from its ancestors.
+
+Dead conjectures are kept, not discarded: each is a coordinate that narrows the search, in keeping with [`docs/researcher_mindset.md`](docs/researcher_mindset.md).
+
+### 10.2 The ten lenses
+
+These extend the five [research directions](docs/03_research/research_directions/) with sharper attack angles. They are deliberately diverse so the failure modes do not correlate.
+
+| Lens | The angle |
+|---|---|
+| Geometric depletion | Push past Constantin-Fefferman: curvature/torsion of vortex lines, alignment with the strain eigenframe, direction-field functionals that could be a priori bounded. |
+| Topological helicity | Helicity is scale-invariant (critical) but signed and non-coercive; build coercive critical quantities from linking, knottedness, helical decomposition. |
+| Monotone entropy | The Perelman move: hunt unexpected monotone or almost-monotone functionals (backward self-similar weights, localized entropies, optimal-transport reformulations) that are critical and fail for the averaged caricature. |
+| Cascade capacity | The nonlinear flux through Littlewood-Paley shells as a channel with finite capacity; self-improving flux inequalities, minimum-time-per-shell taxes on any blow-up trajectory. |
+| Probabilistic genericity | Singularity as an infinitely fine-tuned event: infinite codimension of blow-up data, instability of every collapse profile, almost-sure global well-posedness under forcing. |
+| Renormalization / spectral | Liouville theorems for the rescaled equation; computer-assisted instability certificates for would-be self-similar profiles (Chen-Hou machinery aimed at *nonexistence*). |
+| Quantitative almost-critical | Erode the gap logarithmically: induction-on-scales with telescoping log loss, regularity under bounds supercritical by only a log factor. |
+| Pressure nonlocality | The nonlocal pressure as the hero (restricted Euler blows up; averaging destroys pressure nonlocality): quantitative "pressure defeats local alignment" bounds. |
+| ML functional search | Search the low-description-length space of critical functionals with the discriminators built in as hard constraints; symbolic regression / neural conjecturing on DNS trajectories. |
+| Anti-lens (blow-up) | Build the singularity to learn from what kills it: Hou-Luo-style scenarios at increasing Reynolds, asymptotically self-similar collapse evading NRS/Tsai. The obstruction map is the skeleton of the regularity proof. |
+
+### 10.3 The four vetting gates
+
+The [three controls](#4-verification-stack) plus the averaged-NS barrier. A conjecture is `dead` if any gate fails outright.
+
+1. **2D control.** Does the mechanism genuinely require vortex stretching, or would it run verbatim in 2D (where the problem is already solved without it)?
+2. **Criticality control.** Redo the scaling arithmetic independently. Is every claimed-critical quantity exponent 0, and is the controlled quantity actually coercive (does bounding it bound a BKM/Prodi-Serrin quantity)? Watch the two traps: critical-but-non-coercive (helicity) and coercive-but-secretly-supercritical (anything controlled by energy alone).
+3. **Viscosity control.** Does it use $\nu\Delta u$ essentially, or would it equally "prove" regularity for Euler (Elgindi) or Burgers (shocks)?
+4. **Tao barrier.** Would the argument apply verbatim to the averaged Navier-Stokes (energy identity and scaling preserved, yet finite-time blow-up)? If yes, it uses only soft structure and is dead. See finding #7 in [`experiments/LEARNINGS.md`](experiments/LEARNINGS.md).
+
+### 10.4 Implementation note
+
+The pattern is realizable as a single background workflow: a `pipeline` over the lenses (Forge stage), each feeding a `parallel` fan of ADVERSARY attacks, with SURVEYOR precedent checks gated on survival. Structured-output schemas force each stage to return validated objects so survivors can be tabulated mechanically. The output is a vetted dossier (statement, kill-reason or survival, precedent status, first experiment) that SYNTHESIZER folds into the relevant research direction. A run was designed and scaffolded in this repo's session history; the protocol is recorded here as a repeatable move, independent of any single run.
+
+## 11. Cross-references
 
 - [`STATE_OF_THE_PROGRAM.md`](STATE_OF_THE_PROGRAM.md): one-page strategic snapshot.
 - [`docs/03_research/research_directions/`](docs/03_research/research_directions/): the research directions.

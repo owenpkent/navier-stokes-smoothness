@@ -108,6 +108,7 @@ Synthesis of structural insights lives in [`experiments/LEARNINGS.md`](experimen
 | Experiments: scaling/criticality table | Runnable (classifies norms sub/critical/super) |
 | Experiments: energy spectrum | Runnable (reads TG output; falls back to a synthetic field) |
 | Lean 4 / Mathlib skeleton | Skeleton with documented `sorry`s (need not build) |
+| Conjecture-forge protocol | Documented session pattern ([`OPERATIONS.md`](OPERATIONS.md) §10): ten first-principles lenses, four vetting gates |
 | Intuitive / undergraduate docs | In progress |
 | manim visualizations | One scene present |
 
