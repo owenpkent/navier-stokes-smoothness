@@ -66,8 +66,8 @@ None (scaffold session).
 
 ## Last verified state
 
-- Git commit: scaffold (this commit). See README Status table.
-- Experiments verified to run: `scaling_criticality/criticality_table.py` and `burgers_shock/burgers_blowup.py` (both confirmed end-to-end); smoke test passes.
+- Git commit: 37b8c9f (the three new experiments). See README Status table.
+- Experiments verified to run (2026-06-10, all end-to-end, numbers matching the committed READMEs and LEARNINGS): `scaling_criticality/criticality_table.py`, `dyadic_shell/criticality_scan.py` (boundary at alpha_c = 1/3), `vortex_stretching/alignment_depletion.py` (budget <0.65% in resolved window, depletion 0.53), `resolution_study/bkm_refinement.py` (BKM converges, last change 0.39%/0.25%). Earlier confirmed: `burgers_shock/`, `taylor_green/`, `energy_spectrum/`, smoke test.
 - Lean: skeleton only, documented `sorry`, build not attempted.
 
 ## Session log (recent)
@@ -75,7 +75,8 @@ None (scaffold session).
 | Date | Session focus | Commits | Key outputs |
 |---|---|---|---|
 | scaffold | Stand up the repo: structure, docs, controls, four experiments, Lean skeleton, agents | scaffold | The supercriticality spine; criticality bookkeeper + 2D + viscosity controls; Taylor-Green DNS; Burgers shock comparison; five research directions; LEARNINGS seeded with real findings. |
-| 2026-06-09 | Three new local experiments (e, f, g) | pending | `resolution_study/` (BKM converges under refinement, instrument calibrated, LEARNINGS #11); `vortex_stretching/` (budget verified, depletion ~0.53, CF coherence measured, LEARNINGS #10); `dyadic_shell/` (criticality boundary at alpha_c = 1/3 confirmed dynamically, LEARNINGS #9). PLAN status table updated. |
+| 2026-06-09 | Three new local experiments (e, f, g) | 37b8c9f | `resolution_study/` (BKM converges under refinement, instrument calibrated, LEARNINGS #11); `vortex_stretching/` (budget verified, depletion ~0.53, CF coherence measured, LEARNINGS #10); `dyadic_shell/` (criticality boundary at alpha_c = 1/3 confirmed dynamically, LEARNINGS #9). PLAN status table updated. |
+| 2026-06-10 | Re-ran all five fast experiments end-to-end | pending | Reproduced committed numbers exactly (dyadic boundary, criticality table, vortex-stretching budget/depletion, BKM convergence). Last-verified state refreshed to 37b8c9f. |
 
 ## How to update this file
 
