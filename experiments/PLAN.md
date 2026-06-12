@@ -32,6 +32,7 @@ Beale-Kato-Majda ($\int_0^T\|\omega\|_\infty\,dt < \infty$), Prodi-Serrin-Ladyzh
 - The BKM integral is tracked in the Taylor-Green DNS.
 - **Vortex stretching anatomy** (`vortex_stretching/`): RUNS. Measures the enstrophy budget $dZ/dt = P - D$ (verified to $<1\%$ in the resolved window), strain-eigenvector alignment, the stretching depletion factor ($\approx 0.53$ of pointwise-maximal), and the Constantin-Fefferman direction coherence $|\nabla\xi|$ in the intense region. The 2D control runs alongside ($P$ structurally zero, enstrophy non-increasing). This is the experimental face of the CF lead.
 - Mapping every criterion onto the criticality coordinate is done: see the [conditional-criteria criticality dossier](../docs/research_atlas/conditional_criteria_dossier.md). The vorticity-direction (Constantin-Fefferman) geometric criterion is the lead; the dossier sharpens this to the open $\beta = 0$ endpoint of the coherence ladder.
+- **The $\beta$-dial and sparseness probe** (`vortex_stretching/beta_dial.py`): RUNS. Dossier handoffs 11.3.1-2. Holder-$\beta$ seminorms of $\xi$ on the intense set at $\beta \in \{1, 1/2, 1/4\}$: bounded at every rung, local exponent $\alpha \approx 1.2$ to $1.4$ at peak resolved production (the CF Lipschitz rung is sustained; the staircase has not begun to descend in laminar flow). 2D control: every seminorm exactly zero through the same code path. Sparseness: clean negative (TG is not filamentary; depletion $\approx 0.55$ flat across thresholds), so depletion is not sparseness-driven here. LEARNINGS #14.
 
 ### Architecture 3: critical spaces and scaling
 
@@ -69,11 +70,15 @@ Buckmaster-Vicol (2019): non-uniqueness of weak solutions below the Leray-Hopf c
 | (g) | 3 / 4 | dyadic shell criticality scan (the bookkeeper, dynamical) | RUNS (40 shells) |
 | (h) | 2 | criticality dossier for all conditional criteria | DONE (survey): [docs/research_atlas/conditional_criteria_dossier.md](../docs/research_atlas/conditional_criteria_dossier.md) |
 | (i) | 4 | Hou-Luo axisymmetric NS with swirl: refinement + no-swirl + viscosity controls | RUNS (64/128/256^2) |
+| (j) | 2 | beta-dial coherence ladder + intense-set sparseness (dossier handoffs 11.3.1-2) | RUNS (32^3) |
 | next | 5 | convex-integration non-uniqueness survey | TODO (survey) |
+| next | 2 / 4 | beta-dial mounted on Hou-Luo + nu-sweep (does coherence degrade as intensity grows?) | TODO (compute) |
 
 ## Conjecture-forge probes (unvetted)
 
 Three falsification probes from the conjecture-forge session live alongside the vetted experiments: `renormalized_profile/` (budget identities, CLEAN), `pressure_hessian_axial/` (inconclusive at $64^3$), `local_induction_depletion/` (null placeholder, needs $N \gtrsim 256$). The underlying conjectures are NOT cleared by the controls; the scripts are reproducible scaffolds, not verdicts.
+
+The cross-field forge run (2026-06-11, [`../docs/03_research/forge_crossfield/`](../docs/03_research/forge_crossfield/)) produced six cards (five wounded, one dead, none unconditionally alive), two audit-confirmed mathematical keepers (the exact backward-kernel vorticity identity with critical $W$; the vortex-tube halo lemma with constant $\sqrt{3}/4$), and one funded-first probe: the **octave ledger post-processor** (`octave_ledger/`, TODO) on the stored Hou-Luo and vortex-stretching outputs, with the circulation-morphology diagnostics co-mounted.
 
 ## Cross-references
 
