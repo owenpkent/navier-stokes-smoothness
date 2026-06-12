@@ -26,6 +26,8 @@ The problem has a single organizing obstruction, the **supercriticality gap**: t
 | Euler blow-up (Elgindi, Hou-Luo) | $C^{1,\alpha}$ Euler singularity; strong numerics | inviscid; viscosity may save NS | informs where viscosity is marginal |
 | Convex-integration non-uniqueness | non-unique weak solutions (Buckmaster-Vicol) | below the Onsager threshold | outside the regularity discipline |
 
+For Architecture 2 in full detail, see the [conditional-criteria criticality dossier](conditional_criteria_dossier.md): every known conditional criterion (PSL, ESS and its extensions, BKM, gradient, pressure, one-component, vorticity-direction, the $\dot B^{-1}_{\infty,\infty}$ endpoint, and the log-improved layer) placed on the sub/critical/super coordinate, with the structural information each uses.
+
 ## The five obstructions, named
 
 Reading down the table, the obstructions cluster into five recurring walls:
