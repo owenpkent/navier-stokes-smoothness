@@ -71,7 +71,7 @@
 
 ## Last verified state
 
-- Git commit: afc2884 (dossier 1f6105d + hou_luo experiment and synthesis afc2884). See README Status table.
+- Git commit: 5a8f2ef (beta-dial 8ddae0b + cross-field forge and synthesis 5a8f2ef; earlier this session: dossier 1f6105d, hou_luo afc2884). See README Status table.
 - Experiments verified to run (2026-06-11, independent re-runs after build): `vortex_stretching/beta_dial.py` (alpha = 1.36, growth x2.02/x2.26/x2.26, depletion-on-set 0.554, 2D control 0.0 exact); `hou_luo/hou_luo_axisymmetric.py` end-to-end, all numbers reproduced exactly (BKM 80.4113 / 79.9070 / 79.8195, CONVERGED at 0.11%; no-swirl amplification x1.00 with max|w1| flat at 29.9136; nu/4 BKM x3.09). Earlier verified (2026-06-10): `scaling_criticality/`, `dyadic_shell/` (alpha_c = 1/3), `vortex_stretching/` (budget <0.65%, depletion 0.53), `resolution_study/` (BKM converges 0.39%/0.25%). Earlier confirmed: `burgers_shock/`, `taylor_green/`, `energy_spectrum/`, smoke test.
 - Lean: skeleton only, documented `sorry`, build not attempted.
 
