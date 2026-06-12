@@ -22,6 +22,8 @@ Source: `scaling_criticality/`, literature (Prodi-Serrin-Ladyzhenskaya, Beale-Ka
 
 $\dot H^{1/2}$, $L^3$, $\mathrm{BMO}^{-1}$, and the BKM vorticity integral all have scaling exponent $0$ (critical). This is not a coincidence: a regularity criterion has to be scale invariant, because regularity is preserved by the scaling. The consequence is sharp: the gap between the supercritical bound we have (energy) and the critical control we need (any of these) is a gap in scaling weight, not just in technique. Closing it requires a genuinely new, scaling-critical a priori bound. No such bound is known.
 
+REFINEMENT (from the conditional-criteria dossier, #12): the precise statement is "critical **or worse**." The size criteria sit exactly at exponent $0$; the one-component family sat strictly above critical (subcritical-demanding) until Chemin-Zhang 2016 reached the line; the vorticity-direction family carries a tax equal to its Holder exponent $\beta$ and its critical endpoint $\beta = 0$ is open. No known criterion has a supercritical hypothesis, and the Tao barrier (#7) explains why none can be soft.
+
 ## #3 2D closes because the enstrophy bound is available there
 
 Source: `_shared/flow.py` (`Flow2D`), smoke test Test 5, literature (Ladyzhenskaya 1959).
@@ -75,6 +77,18 @@ Along a Taylor-Green run ($32^3$, $\nu = 0.01$) the enstrophy budget $dZ/dt = \i
 Source: `resolution_study/bkm_refinement.py`.
 
 Grid refinement $16^3 \to 24^3 \to 32^3$ at $\nu \in \{0.025, 0.01\}$: the BKM integral $\int_0^3 \|\omega\|_\infty\,dt$ converges (successive change below tolerance at the finest pair), and the critical norms $\|u\|_{L^3}$, $\|u\|_{\dot H^{1/2}}$ stay bounded along every run, consistent with ESS. This is calibration, not evidence about the supercritical regime: it fixes the signature a real candidate singularity must show (BKM growth that **survives** refinement) and confirms the instrument reads CONVERGED in the known-smooth regime. CONSEQUENCE: future near-singular scenarios (Hou-Luo-type data) have a well-defined pass/fail readout.
+
+## #12 The frontier past critical is log-thin, and only the geometric staircase is still descending
+
+Source: [`../docs/research_atlas/conditional_criteria_dossier.md`](../docs/research_atlas/conditional_criteria_dossier.md) (the Architecture 2 dossier).
+
+Mapping every known conditional criterion onto the criticality coordinate via the master computation $a = k - 2/p - 3/q$ yields three structural facts. (i) Every hypothesis has $a \ge 0$: the energy supplies $a = -1/2$ in every currency, and no provable criterion accepts that. (ii) The entire advance past the critical line since 1984 is **logarithmic** (Chan-Vasseur one log, Kozono-Ogawa-Taniuchi one log, Tao 2009 hyperdissipative one log, Tao 2019 triple-log at the $L^3$ endpoint) against a needed polynomial $\lambda^{1/2}$: the no-man's-land has measured width $\lambda^{1/2}$ and measured crossing rate $(\log\lambda)^{O(1)}$, so grinding the size axis cannot close it. (iii) New bookkeeping: the Constantin-Fefferman family has its own criticality ladder, because the Holder-$\beta$ modulus of the dimensionless direction field scales as $\lambda^{+\beta}$. The literature marched $\beta = 1$ (1993) to $\beta = 1/2$ (2002, exactly enstrophy height) to $\beta \to 0$ class-restricted (Giga-Miura 2011); the unconditional $\beta = 0$ endpoint is open. Unlike the size line (reached by 1984, log-frozen since), the geometric staircase has never touched its endpoint. CONSEQUENCE: the CF lead sharpens to a named target (the $\beta = 0$ coherence endpoint, Direction 02), and the only thread claiming an algebraic bite on the gap is Grujic-type sparseness, conditional on geometry the DNS observes unforced (#10). Three instrumentable handoffs are in the dossier, section 11.3.
+
+## #13 The Hou-Luo geometry at laptop viscosity: resolved, swirl-driven, viscosity-limited
+
+Source: `hou_luo/hou_luo_axisymmetric.py`.
+
+The instrument from #11, mounted on the one geometry whose inviscid limit is the leading blow-up candidate (the Luo-Hou wall scenario; Chen-Hou). Axisymmetric NS **with swirl** at $\nu = 0.005$: the wall-driven stretching event amplifies $\|\omega\|_\infty$ by $5.1\times$, and the BKM integral **converges** under $64^2 \to 128^2 \to 256^2$ refinement (last change $0.11\%$): viscosity wins at these parameters, as expected. The controls carry the structure: the no-swirl run (globally regular by Ukhovskii-Yudovich/Ladyzhenskaya 1968) shows amplification $1.00\times$ at matched initial vorticity (the transport-diffusion maximum principle holds exactly), and $\nu/4$ triples both the peak and the BKM integral. CONSEQUENCE: swirl is demonstrably the engine (the 2D-control analog passes non-vacuously), the growth is steeply $\nu$-sensitive toward the Euler limit, and the open dial is quantitative: does the amplification diverge as $\nu \to 0$ at fixed data, or saturate? A $\nu$-sweep with per-$\nu$ refinement convergence is the next step on this experiment.
 
 ---
 

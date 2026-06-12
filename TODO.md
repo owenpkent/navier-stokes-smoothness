@@ -53,8 +53,8 @@
 
 - [ ] Resolution study at higher resolution: push the existing `resolution_study/` to 48^3, 64^3 and lower viscosity; confirm BKM convergence persists (the 16/24/32^3 sweep is done and converged)
 - [ ] Add 2/3-rule dealiasing to the Taylor-Green solver and confirm energy/enstrophy diagnostics are stable under it
-- [ ] Set up the Hou-Luo axisymmetric near-singular scenario at coarse resolution (the most-studied candidate near-blow-up flow)
-- [ ] Quantitative criticality dossier: classify the one-component, vorticity-direction (Constantin-Fefferman), and anisotropic criteria onto the sub/critical/super coordinate (Constantin-Fefferman done in docs/03_research/reading_notes/constantin_fefferman_1993.md and the criticality-placement table; one-component and anisotropic criteria remain)
+- [x] Set up the Hou-Luo axisymmetric near-singular scenario at coarse resolution (the most-studied candidate near-blow-up flow) (in `experiments/hou_luo/`: BKM converged under 64/128/256^2 refinement at nu=0.005; no-swirl and nu/4 controls run)
+- [x] Quantitative criticality dossier: classify the one-component, vorticity-direction (Constantin-Fefferman), and anisotropic criteria onto the sub/critical/super coordinate (done in docs/research_atlas/conditional_criteria_dossier.md: master table, anisotropy-tax staircase, CF beta-ladder with the open beta = 0 endpoint)
 - [ ] Energy spectrum from an actual Taylor-Green run rather than the synthetic fallback; compare the -5/3 inertial range expectation at higher Reynolds
 - [x] 2D control experiment: 2D Navier-Stokes enstrophy non-increasing and production structurally zero, run side by side with the 3D vortex-stretching diagnostics (in `experiments/vortex_stretching/`)
 
