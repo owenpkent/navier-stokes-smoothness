@@ -68,7 +68,7 @@
 
 ## Last verified state
 
-- Git commit: 37b8c9f plus uncommitted session work of 2026-06-11 (dossier + hou_luo). See README Status table.
+- Git commit: afc2884 (dossier 1f6105d + hou_luo experiment and synthesis afc2884). See README Status table.
 - Experiments verified to run (2026-06-11, independent re-run after build): `hou_luo/hou_luo_axisymmetric.py` end-to-end, all numbers reproduced exactly (BKM 80.4113 / 79.9070 / 79.8195, CONVERGED at 0.11%; no-swirl amplification x1.00 with max|w1| flat at 29.9136; nu/4 BKM x3.09). Earlier verified (2026-06-10): `scaling_criticality/`, `dyadic_shell/` (alpha_c = 1/3), `vortex_stretching/` (budget <0.65%, depletion 0.53), `resolution_study/` (BKM converges 0.39%/0.25%). Earlier confirmed: `burgers_shock/`, `taylor_green/`, `energy_spectrum/`, smoke test.
 - Lean: skeleton only, documented `sorry`, build not attempted.
 
